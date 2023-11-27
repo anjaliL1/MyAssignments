@@ -20,7 +20,7 @@ public class Mobile {
 		m.makeCall();
 		m.sendMsg();
 		//I am unable to print the variable using object reference
-		System.out.println(m.mo);
+		//System.out.println(m.mobileModel);
 		System.out.println("This is my mobile num");
 	}
 
