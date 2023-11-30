@@ -44,7 +44,7 @@ public class CreateAccount {
 		Select stPrvId = new Select(driver.findElement(By.id("generalStateProvinceGeoId")));
 		stPrvId.selectByValue("TX");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
-		
+		 
 		driver.findElement(By.className("smallSubmit")).click();
 		/*String accNam = driver.findElement(By.className("tabletext")).getText();	
 		System.out.println(accNam);

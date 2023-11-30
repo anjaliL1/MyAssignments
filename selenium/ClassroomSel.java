@@ -1,7 +1,9 @@
 package learning.selenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class ClassroomSel {
 
@@ -25,7 +27,22 @@ public class ClassroomSel {
         //createLeadForm_companyName
         driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf");
         driver.findElement(By.id("createLeadForm_firstName")).sendKeys("TestLeaf");
+        
+        //Select for Source dropdown
         driver.findElement(By.id("createLeadForm_lastName")).sendKeys("TestLeaf");
+        WebElement source = driver.findElement(By.id("createLeadForm_dataSourceId"));     
+        Select sourcetDrp = new Select(source);
+        sourcetDrp.selectByIndex(1);
+        
+        //Select for MarketCamp dropdown
+        WebElement mktC = driver.findElement(By.id("createLeadForm_marketingCampaignId"));
+        Select mktCamp = new Select(mktC);
+        mktCamp.selectByValue("9002");
+        
+        //Select for Industry dropdown
+        WebElement indus = driver.findElement(By.id("createLeadForm_industryEnumId"));
+        Select induDrpDown = new Select(indus);
+        induDrpDown.selectByVisibleText("Aerospace");
         driver.findElement(By.name("submitButton")).click();
 
 	}
